@@ -1,16 +1,21 @@
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Exclude } from 'class-transformer';
+
+@Entity()
 export class Recipe {
-  recipe_id?: number;
-  pdf_path: string;
-  popularity: number;
-  views: number;
-  preparation: string;
-  banner_image: string;
-  description: string;
-  read_time: string;
-  average_ranking: number;
-  likes: number;
-  title: string;
-  step: number;
-  persons: number;
-  ingredients: string;
+  @PrimaryGeneratedColumn() recipe_id?: number;
+  @Exclude() @Column() pdf_path: string;
+  @Column() popularity: number;
+  @Column() views: number;
+  @Column() preparation: string;
+  @Column() banner_image: string;
+  @Column() description: string;
+  @Column() read_time: string;
+  @Column() average_ranking: number;
+  @Column() likes: number;
+  @Column() title: string;
+  @Column() step: number;
+  @Column() persons: number;
+  @Column() ingredients: string;
+  @Exclude() @Column() isDeleted = false;
 }
