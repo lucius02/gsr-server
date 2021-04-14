@@ -1,8 +1,8 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { Exclude } from 'class-transformer';
 
-@Entity()
-export class Recipe {
+@Entity('Recipe')
+export class recipe {
   @PrimaryGeneratedColumn() recipe_id?: number;
   @Exclude() @Column() pdf_path: string;
   @Column() popularity: number;

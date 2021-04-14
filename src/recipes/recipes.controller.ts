@@ -6,7 +6,7 @@ export class RecipesController {
   constructor(private recipesService: RecipesService) {}
 
   @Get()
-  getMissions() {
+  getRecipes() {
     return this.recipesService.getRecipes();
   }
 }

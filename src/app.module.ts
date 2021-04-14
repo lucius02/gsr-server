@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { RecipesService } from './recipes/recipes.service';
 import { RecipesController } from './recipes/recipes.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Recipe } from './models/recipe.modal';
+import { recipe } from './models/recipe.modal';
 import { DataInterceptor } from './util/data.interceptor';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 
@@ -20,7 +20,7 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
       entities: [__dirname + '/**/*.model{.ts,.js}'],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([Recipe]),
+    TypeOrmModule.forFeature([recipe]),
   ],
   controllers: [AppController, RecipesController],
   providers: [
