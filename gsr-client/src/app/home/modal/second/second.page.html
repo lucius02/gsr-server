@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Modal Page</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-item *ngFor="let recipes of (recipes| async)">
+    <ion-label>
+      <h2>{{ recipes.title }}</h2>
+      <p>views: {{ recipes.views }}</p>
+      <p>popularity: {{ recipes.popularity }}</p>
+      <p>preparation: {{ recipes.preparation }}</p>
+      <p>description: {{ recipes.description }}</p>
+      <p>read_time: {{ recipes.read_time }}</p>
+      <p>average_ranking: {{ recipes.average_ranking }}</p>
+      <p>likes: {{ recipes.likes }}</p>
+      <p>step: {{ recipes.step }}</p>
+      <p>persons: {{ recipes.persons }}</p>
+      <p>ingredients: {{ recipes.ingredients }}</p>
+    </ion-label>
+    <ion-icon slot="start" icon="rocket" color="primary"></ion-icon>
+  </ion-item>
+</ion-content>

@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { Exclude } from 'class-transformer';
 
-@Entity('Recipe')
+@Entity('recipe')
 export class recipe {
   @PrimaryGeneratedColumn() recipe_id?: number;
   @Exclude() @Column() pdf_path: string;
@@ -17,5 +17,5 @@ export class recipe {
   @Column() step: number;
   @Column() persons: number;
   @Column() ingredients: string;
-  @Exclude() @Column() isDeleted = false;
+  @Exclude() @Column() isDeleted: boolean = false;
 }

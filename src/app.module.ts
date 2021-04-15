@@ -17,7 +17,7 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
       username: 'postgres', // Update to your db username
       password: 'WelKom7993', // Update to your db password
       database: 'diet',
-      entities: [__dirname + '/**/*.model{.ts,.js}'],
+      entities: [recipe],
       synchronize: true,
     }),
     TypeOrmModule.forFeature([recipe]),
