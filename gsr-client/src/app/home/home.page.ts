@@ -22,7 +22,9 @@ export class HomePage implements OnInit {
 
   async openModal(){
     const modal = await this.modalController.create({
-      component: SecondPage
+      component: SecondPage,
+      componentProps: {
+      }
     });
     return await modal.present();
   }

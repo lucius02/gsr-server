@@ -9,7 +9,7 @@ export class RecipesService {
     @InjectRepository(recipe) private recipesRepository: Repository<recipe>,
   ) {}
 
-  async getRecipe(): Promise<recipe[]> {
-    return this.recipesRepository.find({ isDeleted: false });
+  async getRecipe3(): Promise<recipe[]> {
+    return this.recipesRepository.find({ recipe_id: 3 });
   }
 }
