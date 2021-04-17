@@ -12,4 +12,7 @@ export class RecipesService {
   async getRecipe3(): Promise<recipe[]> {
     return this.recipesRepository.find({ recipe_id: 3 });
   }
+  async getRecipe4(): Promise<recipe[]> {
+    return this.recipesRepository.find({ recipe_id: 4 });
+  }
 }

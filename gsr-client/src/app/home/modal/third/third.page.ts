@@ -2,19 +2,19 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { RecipesService } from '../../../services/recipes.service';
-import { recipe } from '../../../../../../src/models/recipe.modal';
+
 @Component({
-  selector: 'app-second',
-  templateUrl: './second.page.html',
-  styleUrls: ['./second.page.scss']
+  selector: 'app-third',
+  templateUrl: './third.page.html',
+  styleUrls: ['./third.page.scss']
 })
-export class SecondPage implements OnInit {
-  recipes1: Observable<any>;
+export class ThirdPage implements OnInit {
+  recipes2: Observable<any>;
 
   constructor(private modalController: ModalController,  private recipesService: RecipesService) {}
 
   ngOnInit() {
-    this.recipes1 = this.recipesService.getRecipes();
+    this.recipes2 = this.recipesService.getRecipes();
   }
   async closeModal() {
     await this.modalController.dismiss();

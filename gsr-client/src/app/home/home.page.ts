@@ -5,6 +5,7 @@ import { ModalController, NavController, PopoverController } from '@ionic/angula
 import { ModalPage } from './modal/Modal.page';
 import { SecondPage } from './modal/second/second.page';
 import { recipe } from '../../../../src/models/recipe.modal';
+import { ThirdPage } from './modal/third/third.page';
 
 @Component({
   selector: 'app-home',
@@ -22,9 +23,14 @@ export class HomePage implements OnInit {
 
   async openModal(){
     const modal = await this.modalController.create({
-      component: SecondPage,
-      componentProps: {
-      }
+      component: SecondPage
+    });
+    return await modal.present();
+  }
+
+  async openModal2(){
+    const modal = await this.modalController.create({
+      component: ThirdPage
     });
     return await modal.present();
   }

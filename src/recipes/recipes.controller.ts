@@ -7,6 +7,10 @@ export class RecipesController {
 
   @Get()
   getRecipe() {
-    return this.recipesService.getRecipe();
+    return this.recipesService.getRecipe3();
+  }
+
+  getRecipe2() {
+    return this.recipesService.getRecipe4();
   }
 }
