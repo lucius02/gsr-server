@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <ion-item *ngFor="let recipes of (recipes2| async)">
+  <ion-item *ngFor="let recipes of (recipes1| ThirdPipe)">
     <ion-label>
       <h2>{{ recipes.title }}</h2>
       <p>views: {{ recipes.views }}</p>
