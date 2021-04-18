@@ -12,6 +12,14 @@ export class RecipesService {
   async getRecipe3(): Promise<recipe[]> {
     return this.recipesRepository.find({ recipe_id: 3 });
   }
+}
+
+@Injectable({})
+export class RecipesService2 {
+  constructor(
+    @InjectRepository(recipe) private recipesRepository: Repository<recipe>,
+  ) {}
+
   async getRecipe4(): Promise<recipe[]> {
     return this.recipesRepository.find({ recipe_id: 4 });
   }

@@ -1,9 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
-import { RecipesService } from './recipes.service';
+import { RecipesService, RecipesService2 } from './recipes.service';
 
 @Controller('recipes')
 export class RecipesController {
-  constructor(private recipesService: RecipesService) {}
+  constructor(
+    private recipesService: RecipesService,
+    private recipesService2: RecipesService2,
+  ) {}
 
   @Get()
   getRecipe() {
@@ -11,6 +14,6 @@ export class RecipesController {
   }
 
   getRecipe2() {
-    return this.recipesService.getRecipe4();
+    return this.recipesService2.getRecipe4();
   }
 }

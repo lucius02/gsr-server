@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { RecipesService } from './recipes/recipes.service';
+import { RecipesService, RecipesService2 } from './recipes/recipes.service';
 import { RecipesController } from './recipes/recipes.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { recipe } from './models/recipe.modal';
@@ -21,6 +21,7 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
       synchronize: true,
     }),
     TypeOrmModule.forFeature([recipe]),
+    RecipesService2,
   ],
   controllers: [AppController, RecipesController],
   providers: [
@@ -30,6 +31,7 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
     },
     AppService,
     RecipesService,
+    RecipesService2,
   ],
 })
 export class AppModule {}

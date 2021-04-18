@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipesService } from '../services/recipes.service';
-import { Observable } from 'rxjs';
-import { ModalController, NavController, PopoverController } from '@ionic/angular';
-import { ModalPage } from './modal/Modal.page';
+import { ModalController } from '@ionic/angular';
 import { SecondPage } from './modal/second/second.page';
-import { recipe } from '../../../../src/models/recipe.modal';
 import { ThirdPage } from './modal/third/third.page';
 
 @Component({
@@ -13,12 +9,9 @@ import { ThirdPage } from './modal/third/third.page';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  recipes: Observable<any>;
-
-  constructor(private nav: NavController, private recipesService: RecipesService, public modalController: ModalController) {}
+  constructor(public modalController: ModalController) {}
 
   ngOnInit() {
-    this.recipes = this.recipesService.getRecipes();
   }
 
   async openModal(){
