@@ -10,17 +10,12 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { ModalPageModule } from './home/modal/Modal.module';
 import { CommonModule } from '@angular/common';
-import { ThirdPipe } from './home/modal/third/third.pipe';
-import { ThirdPage } from './home/modal/third/third.page';
 
 @NgModule({
-  declarations: [AppComponent, ThirdPipe, ThirdPage],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ModalPageModule, CommonModule, ],
-  providers: [ThirdPipe, StatusBar, SplashScreen, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
+  providers: [StatusBar, SplashScreen, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],
-  exports: [
-    ThirdPipe
-  ]
 })
 export class AppModule {}

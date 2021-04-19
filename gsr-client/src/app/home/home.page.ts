@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { SecondPage } from './modal/second/second.page';
-import { ThirdPage } from './modal/third/third.page';
+import { Observable } from 'rxjs';
+import { RecipesService } from '../services/recipes.service';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,13 @@ import { ThirdPage } from './modal/third/third.page';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  constructor(public modalController: ModalController) {}
+  recipes1: Observable<any>;
+
+
+  constructor(private modalController: ModalController,  private recipesService: RecipesService) {}
 
   ngOnInit() {
+    this.recipes1 = this.recipesService.getRecipes();
   }
 
   async openModal(){
@@ -23,6 +28,7 @@ export class HomePage implements OnInit {
 
   async openModal2(){
     const modal = await this.modalController.create({
+      // @ts-ignore
       component: ThirdPage
     });
     return await modal.present();
