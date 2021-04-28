@@ -17,5 +17,4 @@ export class recipe {
   @Column() step: number;
   @Column() persons: number;
   @Column() ingredients: string;
-  @Exclude() @Column() isDeleted: boolean = false;
 }
