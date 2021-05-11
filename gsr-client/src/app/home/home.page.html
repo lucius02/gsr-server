@@ -6,16 +6,9 @@
     <ion-title>Recipes</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content padding>
-  <ion-button color="primary" expand="full" (click)="openModal()">Open Modal 1</ion-button>
-  <ion-button color="primary" expand="full" (click)="openModal()">Open Modal 2</ion-button>
-  <ion-button color="primary" expand="full" (click)="openModal()">Open Modal 3</ion-button>
-  <ion-button color="primary" expand="full" (click)="openModal()">Open Modal 4</ion-button>
-  <ion-button color="primary" expand="full" (click)="openModal()">Open Modal 5</ion-button>
-  <ion-button color="primary" expand="full" (click)="openModal()">Open Modal 6</ion-button>
-
+<ion-content>
   <ion-item *ngFor="let recipes of (recipes1| async)">
-    <ion-label>
+    <ion-label class="ion-text-wrap">
       <h2>{{ recipes.title }}</h2>
       <p>views: {{ recipes.views }}</p>
       <p>popularity: {{ recipes.popularity }}</p>
@@ -28,7 +21,7 @@
       <p>persons: {{ recipes.persons }}</p>
       <p>ingredients: {{ recipes.ingredients }}</p>
     </ion-label>
-    <ion-icon slot="start" icon="rocket" color="primary"></ion-icon>
+    <ion-icon slot="start" icon="arrow-forward-circle-outline" color="primary"></ion-icon>
   </ion-item>
 </ion-content>
 
