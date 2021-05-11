@@ -15,9 +15,7 @@
 #container p {
   font-size: 16px;
   line-height: 22px;
-
   color: #8c8c8c;
-
   margin: 0;
 }
 
@@ -29,8 +27,21 @@
   max-width: 100% !important;
   word-break: break-all !important;
   overflow: hidden !important;
+  --ion-color: #cd2d2d;
 }
 
 ion-content{
   --ion-background-color:#E1E7E7;
+}
+
+ion-item{
+  --ion-background-color:#EABED7;
+  --ion-text-color: #2B2E6B;
+  margin: 25px;
+  border-radius: 15px;
+}
+
+ion-label p{
+  color: #0d0d0d;
+  margin-bottom: 10px;
 }
