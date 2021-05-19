@@ -8,6 +8,6 @@ export class RecipesService {
   constructor(private httpClient: HttpClient) { }
 
   getRecipes() {
-    return this.httpClient.get('http://localhost:3000/recipes');
+    return this.httpClient.get('http://31.14.96.253/recipes');
   }
 }
